@@ -196,7 +196,9 @@ if ($user) {
 $data['lockreason'] = format_text($data['lockreason']);
 $tabs = new tabs($url);
 
-$data['lang'] = get_config('core', 'lang');
+// JavaScript locale string. Arguably "localecldr/langconfig" would be a better
+// choice, but it's not present in Totara langpacks.
+$data['locale'] = get_string('iso6391', 'langconfig');
 
 $data['course'] = helper::course_display_link($data['courseid']);
 

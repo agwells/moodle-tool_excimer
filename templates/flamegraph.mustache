@@ -27,12 +27,12 @@
 
     Context variables required for this template:
     * id - The id of the profile
-    * lang - Language setting
+    * locale - Language setting (a BCP 47 language tag)
 
     Example context (json):
     {
         "id" : 3,
-        "lang" : "en"
+        "locale" : "en"
     }
 }}
 
@@ -73,7 +73,7 @@ function displaysamplestats(d) {
     }
 
     const percentage = ((d.x1 - d.x0) * 100).toFixed(3);
-    const samplecount = d.value.toLocaleString("{{lang}}");
+    const samplecount = d.value.toLocaleString("{{locale}}");
 
     return d.data.name + ` (${percentage}%, ${samplecount} {{#str}} samples, tool_excimer {{/str}}, {{#str}} duration, tool_excimer {{/str}} ~ ${durationstr}})`;
 }
